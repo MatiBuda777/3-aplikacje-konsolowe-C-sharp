@@ -4,17 +4,12 @@ namespace Board_game;
 
 public class Board
 {
-    public int boardSize = 64;
-    public List<int> prizeSpaces = new();
+    public int BoardSize = 64;
+    public List<int> PrizeSpaces = new();
 
     public Board()
     {
-        AddPrizeSpaces();
-    }
-    
-    // generowanie pól specjalnych
-    private void AddPrizeSpaces()
-    {
+        // generowanie pól specjalnych
         Random random = new Random();
         for (int i = 0; i < 12; i++)
         {
@@ -22,14 +17,18 @@ public class Board
             do
             {
                 prizeSpace = random.Next(1, 64);
-            } while (prizeSpaces.Contains(prizeSpace)); // zapewnienie, że pola specjalne nie będą się powtarzać
-            prizeSpaces.Add(prizeSpace);
+            } while (PrizeSpaces.Contains(prizeSpace)); // zapewnienie, że pola specjalne nie będą się powtarzać
+
+            PrizeSpaces.Add(prizeSpace);
         }
     }
-    
-    // generowanie nagród dla gracza
-    public void Prizes(Player player)
+        
+    public void DisplayPrizeSpaces()
     {
-        int x = 0;
+        Console.WriteLine("Numery pól specjalnych:");
+        foreach (var space in this.PrizeSpaces)
+        {
+            Console.WriteLine(space);
+        }
     }
 }
