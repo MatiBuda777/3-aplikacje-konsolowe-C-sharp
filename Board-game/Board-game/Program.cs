@@ -2,12 +2,21 @@
 
 using Board_game;
 
-internal class Program
+
+internal partial class Program
 {
+    public static Action<char> Line = (char type) => Console.WriteLine(string.Concat(Enumerable.Repeat(type, 50)));
     public static void Main(string[] args)
     {
         Board board = new();
-        Console.WriteLine(board.BoardSize);
-        board.DisplayPrizeSpaces();
+        
+        Player[] players = new Player[]
+        {
+            new Player("Alice"),
+            new Player("Bob"),
+            new Player("Charlie")
+        };
+
+        Game.Finish(players);
     }
 }

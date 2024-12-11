@@ -10,7 +10,7 @@ public class Player
     public int Energy = 20;
     
     // konstruktor obiektu Player
-    public Player(string name, int position, int score)
+    public Player(string name)
     {
         this.Name = name;
         this.Position = 0;
@@ -20,7 +20,8 @@ public class Player
     // ruch na planszy
     public void Movement(int move)
     {
-        this.Position += move;
+        if ((this.Position += move) ! >= 64) this.Position += move;
+        else this.Position = 64;
     }
     
     // zdobywanie punktów

@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj": {}
+    "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\Board-game\\Board-game\\Board-game.csproj": {}
   },
   "projects": {
-    "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj": {
+    "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\Board-game\\Board-game\\Board-game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj",
+        "projectUniqueName": "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\Board-game\\Board-game\\Board-game.csproj",
         "projectName": "Board-game",
-        "projectPath": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj",
-        "packagesPath": "/home/matibuda/.nuget/packages/",
-        "outputPath": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/obj/",
+        "projectPath": "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\Board-game\\Board-game\\Board-game.csproj",
+        "packagesPath": "C:\\Users\\Mateusz (Modern Fox)\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\Board-game\\Board-game\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "/home/matibuda/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Mateusz (Modern Fox)\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +33,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
