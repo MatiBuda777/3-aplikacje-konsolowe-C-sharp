@@ -1,14 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Board_game;
+namespace Board_game;
 
-
-internal partial class Program
+internal class Program
 {
     public static Action<char> Line = (char type) => Console.WriteLine(string.Concat(Enumerable.Repeat(type, 50)));
     public static void Main(string[] args)
     {
-        Board board = new();
+        Random random = new();
+        Board board = new(random);
+        
+        Console.WriteLine("Podaj swoje imię:");
+        Player player1 = new(Console.ReadLine());
+        player1.Info();
         
         Player[] players = new Player[]
         {

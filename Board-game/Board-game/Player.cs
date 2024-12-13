@@ -17,6 +17,15 @@ public class Player
         this.Score = 0;
     }
     
+    // info o graczu
+    public void Info()
+    {
+        Console.WriteLine($"{this.Name}, {this.Score} punktów. Obecnie na polu numer {this.Position}.");
+        Console.WriteLine($"HP: {this.Health}");
+        Console.WriteLine($"Siła: {this.Strength}");
+        Console.WriteLine($"Energia: {this.Energy}");
+    }
+
     // ruch na planszy
     public void Movement(int move)
     {

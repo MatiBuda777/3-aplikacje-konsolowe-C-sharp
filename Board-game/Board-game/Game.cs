@@ -11,9 +11,9 @@ public class Game
         if (!board.PrizeSpaces.Contains(player.Position)) return;
         
         Random random = new Random();
-        int prize = random.Next(1, 5);
-        int rand = random.Next(1, 11);
-        int randPoints = random.Next(1, 21);
+        var prize = random.Next(1, 5);
+        var rand = random.Next(1, 11);
+        var randPoints = random.Next(1, 21);
         Console.WriteLine($"Stajesz na specjalnym polu numer {player.Position}");
         switch (prize)
         {
@@ -44,6 +44,7 @@ public class Game
     {
         // tablica wyników
         Program.Line('=');
+        Console.WriteLine("Tablica wyniki:");
         var i = 1;
         var players = args.OrderByDescending(player => player.Score);
         foreach (var player in players)
