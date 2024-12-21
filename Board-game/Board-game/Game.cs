@@ -40,14 +40,14 @@ public class Game
     }
     
     // wyświetlenie wyników i zakończenie gry
-    public static void Finish(Player[] args)
+    public static void Finish(List<Player> players)
     {
         // tablica wyników
         Program.Line('=');
-        Console.WriteLine("Tablica wyniki:");
+        Console.WriteLine("Tablica wyników:");
         var i = 1;
-        var players = args.OrderByDescending(player => player.Score);
-        foreach (var player in players)
+        var playerTab = players.OrderByDescending(player => player.Score);
+        foreach (var player in playerTab)
         {
             Console.WriteLine($"{i}. {player.Name}, {player.Score} punktów.");
             i++;

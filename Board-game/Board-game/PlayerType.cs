@@ -1,6 +1,7 @@
 namespace Board_game;
 
-public interface Warrior
+// Nie wiem, jak zaimplementować jeden interfejs do jednego obiektu, więc nie robię tego *****
+public interface IWarrior
 {
     // Warrior (Wojownik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę wręcz
     public void Attack(Player attacking, Player attacked)
@@ -11,21 +12,26 @@ public interface Warrior
     }
 }
 
-public interface Archer
+public interface IArcher
 {
     // Archer (Łucznik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę na dystans
     public void Attack(Player attacking, Player attacked)
     {
         var attackPower = attacking.Strength;
         Console.WriteLine($"{attacking.Name} atakuje {attacked.Name}!");
-        attacked.Health = (int)(attacked.Health - attackPower + Math.Floor(attackPower * 0.2));
+        attacked.Health = (attacked.Health - attackPower);
     }
 }
 
-public interface Mage
+public interface IMage
 {
     // Mage (Mag) - specjalizuje się w rzucaniu zaklęć, aby wpływać na grę
-    int Mana { get; set; }
+    public void Attack(Player attacking, Player attacked)
+    {
+        var attackPower = attacking.Strength;
+        Console.WriteLine($"{attacking.Name} atakuje {attacked.Name}!");
+        attacked.Health = (attacked.Health - attackPower);
+    }
     public void Magic(Player mage, Random random)
     {
         Console.WriteLine($"{mage.Name} czaruje!");
@@ -52,11 +58,15 @@ public interface Mage
         }
     }
 }
-public interface Healer
+public interface IHealer
 {
     // Healer (Lekarz) - specjalizuje się w leczeniu innych graczy
-    int Mana { get; set; }
-
+    public void Attack(Player attacking, Player attacked)
+    {
+        var attackPower = attacking.Strength;
+        Console.WriteLine($"{attacking.Name} atakuje {attacked.Name}!");
+        attacked.Health = (attacked.Health - attackPower);
+    }
     public void Heal(Player healer, Random random)
     {
         var healPoints = random.Next(1, 16);

@@ -2,13 +2,13 @@ namespace Board_game;
 
 public class Player
 {
-    public string Name = "Jan";
+    public string Name;
     public int Position;
     public int Score;
     public int Health = 50;
     public int Strength = 5;
     public int Energy = 20;
-    
+
     // konstruktor obiektu Player
     public Player(string name)
     {
@@ -20,10 +20,12 @@ public class Player
     // info o graczu
     public void Info()
     {
+        Program.Line('=');
         Console.WriteLine($"{this.Name}, {this.Score} punktów. Obecnie na polu numer {this.Position}.");
         Console.WriteLine($"HP: {this.Health}");
         Console.WriteLine($"Siła: {this.Strength}");
         Console.WriteLine($"Energia: {this.Energy}");
+        Program.Line('=');
     }
 
     // ruch na planszy
@@ -38,4 +40,9 @@ public class Player
     {
         this.Score += points;
     }
+}
+
+public class CreatePlayer : IWarrior
+{
+    
 }
