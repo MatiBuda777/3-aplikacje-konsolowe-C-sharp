@@ -13,5 +13,9 @@ public class Ticket
         Price = Price;
         SeatNumber = SeatNumber;
     }
-    
+
+    public override string ToString()
+    {
+        return $"Koncert: {Concert.Name}, Data: {Concert.Date}, Miejsce: {SeatNumber}, Cena: {Price}";
+    }
 }
