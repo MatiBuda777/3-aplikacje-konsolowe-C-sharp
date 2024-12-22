@@ -1,4 +1,4 @@
-namespace DefaultNamespace;
+
 
 public class Ticket
 {
@@ -7,7 +7,7 @@ public class Ticket
     public decimal Price { get; set; }
     
     //konstruktor
-    public Ticket(this.concert, int SeatNumber, decimal Price)
+    public Ticket(Concert concert, int SeatNumber, decimal Price)
     {
         Concert = Concert;
         Price = Price;

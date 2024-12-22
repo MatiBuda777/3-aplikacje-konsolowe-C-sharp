@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ConcertTicketBookingSystem/1.0.0": {
+        "runtime": {
+          "ConcertTicketBookingSystem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConcertTicketBookingSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

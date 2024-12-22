@@ -1,15 +1,18 @@
-namespace DefaultNamespace;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class BookingSystem
 {
-    private List<Concert> concerts=new List<Concert>()
-    private List<Ticket> tickets = new List<Ticket>()
+    private List<Concert> concerts = new List<Concert>();
+    private List<Ticket> tickets = new List<Ticket>();
 
 
-    public void AddConcert(Concert concert)
+    public void AddConcert(string name, DateTime date, string location, int availableSeats)
     {
-        concerts.Add(concert);
+        concerts.Add(new Concert(name, date, location, availableSeats)); // Użycie konstruktora
     }
+
 
     public void DisplayConcerts()
     {
@@ -20,13 +23,15 @@ public class BookingSystem
         }
     }
 
-    public void BookTickets(string concertName, double price)
+    public void BookTickets(string concertName, int price)
     {
-        var concert = concerts.FirtsDefault(c => c.Name==concertName);
+        var concert = concerts.FirstOrDefault(c => c.Name==concertName);
 
-        if (concert != null && concert.AviableSeats > 0)
+        if (concert != null && concert.AvailableSeats > 0)
         {
-            int seatNumber = concert.AviableSeats;
+            int seatNumber = concert.AvailableSeats;
+            concert.ReserveSeat();
+            Ticket ticket = new Ticket(concert, price, seatNumber);
             tickets.Add(ticket);
 
             Console.WriteLine("Zarazerwowano bilet");
