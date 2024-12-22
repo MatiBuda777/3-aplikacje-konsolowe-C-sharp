@@ -20,7 +20,7 @@
         }
         else
         {
-            Console.WriteLine("Brak dostępnych miejsc");
+            Console.WriteLine("Brak dostępnych miejsc ");
         }
     }
 
