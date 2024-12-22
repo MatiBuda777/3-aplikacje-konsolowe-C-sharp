@@ -6,12 +6,13 @@ public class Ticket
     public int SeatNumber { get; set; }
     public decimal Price { get; set; }
     
+    
     //konstruktor
-    public Ticket(Concert concert, int SeatNumber, decimal Price)
+    public Ticket(Concert concert, int seatNumber, decimal price)
     {
-        Concert = Concert;
-        Price = Price;
-        SeatNumber = SeatNumber;
+        Concert = concert;
+        Price = price;
+        SeatNumber = seatNumber;
     }
 
     public override string ToString()
