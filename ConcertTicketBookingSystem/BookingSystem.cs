@@ -10,5 +10,18 @@ public class BookingSystem
     {
         concerts.Add(concert);
     }
+
     public void DisplayConcerts()
+    {
+        foreach (var concert in concerts)
+        {
+            Console.WriteLine(
+                $"Koncert: {concert.Name}, Data: {concert.Date}, Lokalizacja: {concert.Location}, Miejsca: {concert.AvailableSeats}");
+        }
+    }
+
+    public void BookTickets(string concertName, double price)
+    {
+        var concert =
+    }
 }
