@@ -4,34 +4,16 @@ namespace Board_game;
 public interface IWarrior
 {
     // Warrior (Wojownik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę wręcz
-    public void Attack(Player attacking, Player attacked)
-    {
-        var attackPower = attacking.Strength;
-        Console.WriteLine($"{attacking.Name} atakuje {attacked.Name}!");
-        attacked.Health = (int)(attacked.Health - attackPower + Math.Floor(attackPower * 0.2));
-    }
 }
 
 public interface IArcher
 {
     // Archer (Łucznik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę na dystans
-    public void Attack(Player attacking, Player attacked)
-    {
-        var attackPower = attacking.Strength;
-        Console.WriteLine($"{attacking.Name} atakuje {attacked.Name}!");
-        attacked.Health = (attacked.Health - attackPower);
-    }
 }
 
 public interface IMage
 {
     // Mage (Mag) - specjalizuje się w rzucaniu zaklęć, aby wpływać na grę
-    public void Attack(Player attacking, Player attacked)
-    {
-        var attackPower = attacking.Strength;
-        Console.WriteLine($"{attacking.Name} atakuje {attacked.Name}!");
-        attacked.Health = (attacked.Health - attackPower);
-    }
     public void Magic(Player mage, Random random)
     {
         Console.WriteLine($"{mage.Name} czaruje!");
@@ -61,12 +43,6 @@ public interface IMage
 public interface IHealer
 {
     // Healer (Lekarz) - specjalizuje się w leczeniu innych graczy
-    public void Attack(Player attacking, Player attacked)
-    {
-        var attackPower = attacking.Strength;
-        Console.WriteLine($"{attacking.Name} atakuje {attacked.Name}!");
-        attacked.Health = (attacked.Health - attackPower);
-    }
     public void Heal(Player healer, Random random)
     {
         var healPoints = random.Next(1, 16);

@@ -31,8 +31,15 @@ public class Player
     // ruch na planszy
     public void Movement(int move)
     {
-        if ((this.Position += move) ! >= 64) this.Position += move;
-        else this.Position = 64;
+        Program.Line('-');
+        if (move == 0) Console.WriteLine("Brak możliwości ruchu (wyrzucone 0 na kości)");
+        else if ((this.Position += move) ! >= 64) this.Position += move;
+        else
+        {
+            this.Position = 64;
+            Console.WriteLine($"Gracz {this.Name}");
+        }
+        Program.Line('-');
     }
     
     // zdobywanie punktów
@@ -40,9 +47,13 @@ public class Player
     {
         this.Score += points;
     }
-}
-
-public class CreatePlayer : IWarrior
-{
     
+    public void Attack(Player attacked)
+    {
+        Program.Line('!');
+        int attackPower = this.Strength;
+        Console.WriteLine($"{this.Name} atakuje {attacked.Name}!");
+        attacked.Health = attacked.Health - attackPower;
+        Program.Line('!');
+    }
 }
