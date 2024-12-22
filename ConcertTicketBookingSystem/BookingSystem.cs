@@ -22,6 +22,28 @@ public class BookingSystem
 
     public void BookTickets(string concertName, double price)
     {
-        var concert =
+        var concert = concerts.FirtsDefault(c => c.Name==concertName);
+
+        if (concert != null && concert.AviableSeats > 0)
+        {
+            int seatNumber = concert.AviableSeats;
+            tickets.Add(ticket);
+
+            Console.WriteLine("Zarazerwowano bilet");
+            Console.WriteLine(ticket);
+        }
+        else
+        {
+            Console.WriteLine("Nie mozna zarezerwować biletu");
+        }
+    }
+
+    public void GenerateReport()
+    {
+        Console.WriteLine("Raport sprzedanych biletów: ");
+        foreach (var ticket in tickets)
+        {
+            Console.WriteLine(ticket);
+        }
     }
 }
