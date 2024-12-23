@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Microsoft.VisualBasic.CompilerServices;
+using System.Threading.Tasks;
 
 namespace Board_game;
 
@@ -64,6 +65,9 @@ internal class Program
         }
 
         players.OrderBy(player => Guid.NewGuid()).ToList(); // mieszanie listy graczy, aby była losowa kolejność
+        Console.WriteLine("Gra się rozpoczyna!");
+        
+        Thread.Sleep(2000);
         
         // cykl gry
         int numberOfTurns = 0;
@@ -72,16 +76,35 @@ internal class Program
             if (players.All(player => player.Position >= 64)) break; // warunek zakończenia pętli
             foreach (var player in players)
             {
-                int move = random.Next(7);
+                if (player.Health <= 0) players.Remove(player);
+            }
+            
+            foreach (var player in players)
+            {
+                if (player == player1)
+                {
+                    Console.WriteLine("\nRzuć kością.");
+                    Console.ReadLine();
+                }
+                int move = random.Next(7); // "rzut kością"
                 player.Movement(move); // ruch gracza po planszy
+
+                Thread.Sleep(1500);
+                
+                // Gdy dwaj gracze spotkają się na jednym polu, jest walka
+                var matchingPlayer = players.Find(player2 => player.Position == player2.Position && player.Name != player2.Name);
+                if (matchingPlayer != null) player.Attack(matchingPlayer);
+                
+                Thread.Sleep(1500);
                 
                 Game.PrizeSpace(player, board); // sprawdzanie, czy gracz jest na polu specjalnym
+                
+                Thread.Sleep(1000);
             }
-
             numberOfTurns++;
         }
         
         // Zakończenie gry
-        Game.Finish(players);
+        Game.Finish(players, numberOfTurns);
     }
 }

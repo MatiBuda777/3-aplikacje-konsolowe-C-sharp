@@ -10,28 +10,27 @@ public class Game
     {
         if (!board.PrizeSpaces.Contains(player.Position)) return;
         
-        Random random = new Random();
-        var prize = random.Next(1, 5);
+        Random random = new();
+        var prize = random.Next(1, 6);
         var rand = random.Next(1, 11);
         var randPoints = random.Next(1, 21);
-        Console.WriteLine($"Stajesz na specjalnym polu numer {player.Position}");
+        Console.WriteLine($"{player.Name} staje na specjalnym polu numer {player.Position}");
         switch (prize)
         {
             case 1:
-                Console.WriteLine($"Otrzymujesz dodatkowe punkty! +{randPoints} punktów.");
-                player.Score += randPoints;
+                player.Scoring(randPoints, true);
                 break;
             case 2:
-                Console.WriteLine($"Twoja siła rośnie! +{rand} siły.");
-                player.Strength += rand;
+                player.Upgrade(rand, 0);
                 break;
             case 3:
-                Console.WriteLine($"Twoja energia powraca! +{rand} energii.");
-                player.Energy += rand;
+                player.Upgrade(rand, 1);
                 break;
-            case 4:
-                Console.WriteLine($"Tracisz część swoich punktów! -{randPoints} punktów.");
-                player.Score -= randPoints;
+            case 4: 
+                player.Scoring(randPoints, false);
+                break;
+            case 5:
+                player.Upgrade(rand, 2);
                 break;
             default:
                 Console.WriteLine("Łot? Nieznana liczba?");
@@ -40,16 +39,18 @@ public class Game
     }
     
     // wyświetlenie wyników i zakończenie gry
-    public static void Finish(List<Player> players)
+    public static void Finish(List<Player> players, int numberOfTurns)
     {
         // tablica wyników
         Program.Line('=');
+        Console.WriteLine($"Gra zakończyła się po {numberOfTurns} kolejkach");
         Console.WriteLine("Tablica wyników:");
-        var i = 1;
+        int i = 1;
         var playerTab = players.OrderByDescending(player => player.Score);
         foreach (var player in playerTab)
         {
-            Console.WriteLine($"{i}. {player.Name}, {player.Score} punktów.");
+            Console.WriteLine($"Miejsce {i}:");
+            player.Info();
             i++;
         }
         Program.Line('=');
