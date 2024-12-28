@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 class Program
 {
+    // ======= funkcja liniowa do tworzenia linii do odzielania tekstu w konsoli ========
+    public static Action<char> Line = (char type) => Console.WriteLine(string.Concat(Enumerable.Repeat(type, 50)));
+
     static void Main(string[] args)
     {
         List<Concert> concerts = new List<Concert>()
@@ -14,7 +17,8 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("\nWybierz opcję:");
+            Program.Line('=');
+            Console.WriteLine("Wybierz opcję:");
             Console.WriteLine("1 - Dodaj nowy koncert");
             Console.WriteLine("2 - Przeglądaj koncerty");
             Console.WriteLine("3 - Rezerwuj bilet");
@@ -45,7 +49,8 @@ class Program
 
     static void AddNewConcert(List<Concert> concerts)
     {
-        Console.WriteLine("\nDodaj nowy koncert:");
+        Program.Line('-');
+        Console.WriteLine("Dodaj nowy koncert:");
         Console.WriteLine("Podaj nazwę koncertu:");
         string name = Console.ReadLine();
 
@@ -62,20 +67,24 @@ class Program
         concerts.Add(newConcert);
 
         Console.WriteLine("Koncert dodany.");
+        Program.Line('-');
     }
 
     static void ShowConcerts(List<Concert> concerts)
     {
-        Console.WriteLine("\nLista koncertów:");
+        Program.Line('-');
+        Console.WriteLine("Lista koncertów:");
         foreach (var concert in concerts)
         {
             Console.WriteLine($"{concert.Name} - {concert.Date.ToShortDateString()} - {concert.Location} - {concert.AvailableSeats} miejsc");
         }
+        Program.Line('-');
     }
 
     static void ReserveTicket(List<Concert> concerts)
     {
-        Console.WriteLine("\nRezerwacja biletu na koncert:");
+        Program.Line('-');
+        Console.WriteLine("Rezerwacja biletu na koncert:");
         Console.WriteLine("Podaj nazwę koncertu, na który chcesz zarezerwować bilet:");
         string selectedConcertName = Console.ReadLine();
 
@@ -101,5 +110,6 @@ class Program
         {
             Console.WriteLine("Nie znaleziono takiego koncertu.");
         }
+        Program.Line('-');
     }
 }

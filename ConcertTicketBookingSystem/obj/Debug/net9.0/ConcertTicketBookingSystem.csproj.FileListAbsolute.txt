@@ -13,3 +13,18 @@ C:\Users\gutek\RiderProjects\ConcertTicketBookingSystem\ConcertTicketBookingSyst
 C:\Users\gutek\RiderProjects\ConcertTicketBookingSystem\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.pdb
 C:\Users\gutek\RiderProjects\ConcertTicketBookingSystem\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.genruntimeconfig.cache
 C:\Users\gutek\RiderProjects\ConcertTicketBookingSystem\ConcertTicketBookingSystem\obj\Debug\net9.0\ref\ConcertTicketBookingSystem.dll
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.AssemblyInfoInputs.cache
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.AssemblyInfo.cs
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.csproj.CoreCompileInputs.cache
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.sourcelink.json
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\refint\ConcertTicketBookingSystem.dll
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.pdb
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\bin\Debug\net9.0\ConcertTicketBookingSystem.exe
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\bin\Debug\net9.0\ConcertTicketBookingSystem.deps.json
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\bin\Debug\net9.0\ConcertTicketBookingSystem.runtimeconfig.json
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\bin\Debug\net9.0\ConcertTicketBookingSystem.dll
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\bin\Debug\net9.0\ConcertTicketBookingSystem.pdb
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.dll
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ConcertTicketBookingSystem.genruntimeconfig.cache
+C:\Users\Mateusz (Modern Fox)\RiderProjects\3-aplikacje-konsolowe-C-sharp\ConcertTicketBookingSystem\obj\Debug\net9.0\ref\ConcertTicketBookingSystem.dll

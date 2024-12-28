@@ -8,27 +8,24 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gutek\\.nuget\\packages\\": {}
+    "C:\\Users\\Mateusz (Modern Fox)\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gutek\\RiderProjects\\ConcertTicketBookingSystem\\ConcertTicketBookingSystem\\ConcertTicketBookingSystem.csproj",
+      "projectUniqueName": "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\ConcertTicketBookingSystem\\ConcertTicketBookingSystem.csproj",
       "projectName": "ConcertTicketBookingSystem",
-      "projectPath": "C:\\Users\\gutek\\RiderProjects\\ConcertTicketBookingSystem\\ConcertTicketBookingSystem\\ConcertTicketBookingSystem.csproj",
-      "packagesPath": "C:\\Users\\gutek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gutek\\RiderProjects\\ConcertTicketBookingSystem\\ConcertTicketBookingSystem\\obj\\",
+      "projectPath": "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\ConcertTicketBookingSystem\\ConcertTicketBookingSystem.csproj",
+      "packagesPath": "C:\\Users\\Mateusz (Modern Fox)\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mateusz (Modern Fox)\\RiderProjects\\3-aplikacje-konsolowe-C-sharp\\ConcertTicketBookingSystem\\obj\\",
       "projectStyle": "PackageReference",
-      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\gutek\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Mateusz (Modern Fox)\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -45,8 +42,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      }
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -67,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\gutek\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

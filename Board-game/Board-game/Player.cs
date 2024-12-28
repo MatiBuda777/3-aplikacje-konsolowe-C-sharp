@@ -1,25 +1,20 @@
 namespace Board_game;
 
-public class Player
+public abstract class Player() 
 {
-    public string Name;
-    public int Position;
-    public int Score;
-    public int Health;
-    public int Strength;
-    public int Energy;
-
     // konstruktor obiektu Player
-    public Player(string name)
+    protected Player(string name) : this()
     {
         this.Name = name;
-        this.Position = 0;
-        this.Score = 0;
-        this.Health = 50;
-        this.Strength = 5;
-        this.Energy = 20;
     }
-    
+
+    public string Name { get; set; }
+    public int Position { get; set; } = 0;
+    public int Score { get; set; } = 0;
+    public int Health { get; set; } = 50;
+    public int Strength { get; set; } = 5;
+    public int Energy { get; set; } = 20;
+
     // info o graczu
     public void Info()
     {
@@ -32,14 +27,18 @@ public class Player
     }
 
     // ruch na planszy
-    public void Movement(int move)
+    public void Movement(int move, bool forward)
     {
         Program.Line('-');
-        this.Position += move;
+        string direction = forward ? "przodu" : "tyłu";
+        if (forward) this.Position += move;
+        else this.Position -= move;
+        
+        if (this.Position < 0) this.Position = 0;
         if (this.Position > 64) this.Position = 64;
         if (this.Position == 64) Console.WriteLine($"{this.Name} ukończył grę.");
         else if (move == 0) Console.WriteLine($"{this.Name} nie rusza się (wyrzucone 0 na kości).");
-        else Console.WriteLine($"{this.Name} przesuwa się o {move} pola.");
+        else Console.WriteLine($"{this.Name} przesuwa się o {move} pola do {direction}.");
         Console.WriteLine($"Jest na polu numer {this.Position}.");
         Program.Line('-');
     }
@@ -59,14 +58,13 @@ public class Player
         }
     }
     
-    public void Attack(Player attacked)
+    public void Fight(Player attacked)
     {
         if (this.Position == 0) return;
         Program.Line('!');
-        int attackPower = this.Strength; 
-        attacked.Health = attacked.Health - attackPower;
+        attacked.Health -= this.Strength;
         Console.WriteLine($"{this.Name} atakuje {attacked.Name}!");
-        Console.WriteLine($"{attacked.Name} traci {attackPower} PŻ i zostaje mu {attacked.Health} PŻ.");
+        Console.WriteLine($"{attacked.Name} traci {this.Strength} PŻ i zostaje mu {attacked.Health} PŻ.");
         Program.Line('!');
     }
 

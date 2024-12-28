@@ -25,10 +25,30 @@ internal class Program
         };
         
         string randomName = names[random.Next(names.Length)];
+        int randomIndex = random.Next(1, 5);
+        
         
         if (players.All(player => player.Name != randomName))
         {
-            var newPlayer = new Player(randomName);
+            string newPlayer;
+            switch (randomIndex)
+            {
+                case 1:
+                    newPlayer = new Warrior(randomName);
+                    break;
+                case 2:
+                    newPlayer = new Archer(randomName);
+                    break;
+                case 3:
+                    newPlayer = new Mage(randomName);
+                    break;
+                case 4:
+                    newPlayer = new Healer(randomName);
+                    break;
+                default:
+                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                    return;
+            }
             players.Add(newPlayer);
             Console.WriteLine($"Dodano gracza {newPlayer.Name}");
         }
@@ -43,10 +63,37 @@ internal class Program
         
         // ----------------- tworzenie obiektów typu Player ---------------------
         Console.WriteLine("Podaj swoje imię:");
-        Player player1 = new(Console.ReadLine());
-        player1.Info();
+        string name = Console.ReadLine();
+        Console.WriteLine("Wybierz typ gracza:" +
+                          "\n1 - Wojownik" +
+                          "\n2 - Łucznik" +
+                          "\n3 - Mag" +
+                          "\n4 - Lekarz");
+        int choice = Convert.ToInt32(Console.ReadLine());
+        Player player1;
         
-        List<Player> players = new() { player1 }; // lista z graczami
+        switch (choice)
+        {
+            case 1:
+                player1 = new Warrior(name);
+                break;
+            case 2:
+                player1 = new Archer(name);
+                break;
+            case 3:
+                player1 = new Mage(name);
+                break;
+            case 4:
+                player1 = new Healer(name);
+                break;
+            default:
+                Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                return;
+        }
+        
+        List<Player> players = new() {  }; // lista z graczami
+        List<Player> playersFinished = new List<Player>(); // lista z graczami, którzy ukończyli grę w jakiś sposób (brak życia lub pole 64)
+        
         
         // dodawanie graczy do listy
         for (int i = 0; i < 3; i++)
@@ -73,12 +120,19 @@ internal class Program
         int numberOfTurns = 0;
         while (true)
         {
-            if (players.All(player => player.Position >= 64)) break; // warunek zakończenia pętli
+            // warunek ukończenia planszy przez gracza
             foreach (var player in players)
             {
-                if (player.Health <= 0) players.Remove(player);
+                if (player.Health <= 0 || player.Position >= 64) playersFinished.Add(player);
+            }
+            foreach (var player in playersFinished)
+            {
+                players.Remove(player);
             }
             
+            if (players.Count == 0) break; // warunek zakończenia pętli
+            
+            // przebieg gry
             foreach (var player in players)
             {
                 if (player == player1)
@@ -87,13 +141,20 @@ internal class Program
                     Console.ReadLine();
                 }
                 int move = random.Next(7); // "rzut kością"
-                player.Movement(move); // ruch gracza po planszy
+                player.Movement(move, true); // ruch gracza po planszy
 
                 Thread.Sleep(1500);
                 
                 // Gdy dwaj gracze spotkają się na jednym polu, jest walka
-                var matchingPlayer = players.Find(player2 => player.Position == player2.Position && player.Name != player2.Name);
-                if (matchingPlayer != null) player.Attack(matchingPlayer);
+                if (player.GetType() == typeof(Warrior))
+                {
+                    var matchingPlayer = players.Find(player2 =>
+                        player.Position == player2.Position && player.Name != player2.Name);
+                    if (matchingPlayer != null)
+                        player.(matchingPlayer);
+                }
+                //var matchingPlayer = players.Find(player2 => player.Position == player2.Position && player.Name != player2.Name);
+                //if (matchingPlayer != null && matchingPlayer.GetType() == typeof(Warrior)) player.Attack(matchingPlayer);
                 
                 Thread.Sleep(1500);
                 

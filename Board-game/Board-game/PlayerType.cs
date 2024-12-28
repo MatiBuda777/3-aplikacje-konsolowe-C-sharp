@@ -1,38 +1,67 @@
 namespace Board_game;
 
-// Nie wiem, jak zaimplementować jeden interfejs do jednego obiektu, więc nie robię tego *****
-public interface IWarrior
+public interface IWarrior { void Attack(Player attacked); }
+
+public interface IArcher { void Shoot(Player attacked); }
+
+public interface IMage { void Magic(); }
+
+public interface IHealer { void Heal(); }
+
+public class Warrior(string name) : Player(name), IWarrior
 {
     // Warrior (Wojownik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę wręcz
+
+    public void Attack(Player attacked)
+    {
+        if (this.Position == 0) return;
+        Program.Line('!');
+        attacked.Health -= this.Strength;
+        Console.WriteLine($"{this.Name} atakuje {attacked.Name}!");
+        Console.WriteLine($"{attacked.Name} traci {this.Strength} PŻ i zostaje mu {attacked.Health} PŻ.");
+        Program.Line('!');
+    }
 }
 
-public interface IArcher
+public class Archer(string name) : Player(name), IArcher
 {
     // Archer (Łucznik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę na dystans
+
+    public void Shoot(Player attacked)
+    {
+        if (attacked.Position == 0) return;
+        Program.Line('!');
+        attacked.Health -= this.Strength / 2;
+        Console.WriteLine($"{this.Name} atakuje {attacked.Name}!");
+        Console.WriteLine($"{attacked.Name} traci {this.Strength} PŻ i zostaje mu {attacked.Health} PŻ.");
+        Program.Line('!');
+    }
 }
 
-public interface IMage
+public class Mage(string name) : Player(name), IMage
 {
     // Mage (Mag) - specjalizuje się w rzucaniu zaklęć, aby wpływać na grę
-    public void Magic(Player mage, Random random)
+
+    public void Magic()
     {
-        Console.WriteLine($"{mage.Name} czaruje!");
+        Random random = new();
+        Console.WriteLine($"{this.Name} czaruje!");
         var rand = random.Next(1, 4);
         var points = random.Next(1, 11);
         var move = random.Next(1, 5);
         switch (rand)
         {
             case 1:
-                Console.WriteLine($"{mage.Name} wyczarowuje {rand} punktów!");
-                mage.Score += points;
+                Console.WriteLine($"{this.Name} daje sobie {rand} punktów!");
+                this.Scoring(points, true);
                 break;
             case 2:
-                Console.WriteLine($"{mage.Name} przenosi się o {move} pola do przodu!");
-                mage.Position += move;
+                Console.WriteLine($"{this.Name} przenosi się o {move} pola do przodu!");
+                this.Movement(move, true);
                 break;
             case 3:
-                Console.WriteLine($"{mage.Name} przenosi się o {move} pola do tyłu!");
-                mage.Position += move;
+                Console.WriteLine($"{this.Name} przenosi się o {move} pola do tyłu!");
+                this.Movement(move, false);
                 break;
             default:
                 Console.WriteLine("Łot? Nieznana liczba?");
@@ -40,13 +69,15 @@ public interface IMage
         }
     }
 }
-public interface IHealer
+public class Healer(string name) : Player(name), IHealer
 {
     // Healer (Lekarz) - specjalizuje się w leczeniu innych graczy
-    public void Heal(Player healer, Random random)
+
+    public void Heal()
     {
-        var healPoints = random.Next(1, 16);
-        Console.WriteLine($"{healer.Name} ulecza siebie o {healPoints} punktów!");
-        healer.Health += healPoints;
+        Random random = new();
+        int healPoints = random.Next(1, 16);
+        Console.WriteLine($"{this.Name} ulecza siebie o {healPoints} punktów!");
+        this.Health += healPoints;
     }
 }
