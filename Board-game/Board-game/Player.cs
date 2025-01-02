@@ -74,7 +74,6 @@ public abstract class Player()
         {
             this.Health += value;
             Console.WriteLine($"Punkty Życia gracza {this.Name} rosną! +{value} PŻ.\n{this.Name} - {this.Health} PŻ.");
-
         }
         else if (type == 1)
         {

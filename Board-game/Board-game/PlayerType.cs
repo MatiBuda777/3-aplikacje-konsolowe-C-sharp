@@ -1,14 +1,6 @@
 namespace Board_game;
 
-public interface IWarrior { void Attack(Player attacked); }
-
-public interface IArcher { void Shoot(Player attacked); }
-
-public interface IMage { void Magic(); }
-
-public interface IHealer { void Heal(); }
-
-public class Warrior(string name) : Player(name), IWarrior
+public class Warrior(string name) : Player(name)
 {
     // Warrior (Wojownik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę wręcz
 
@@ -23,7 +15,7 @@ public class Warrior(string name) : Player(name), IWarrior
     }
 }
 
-public class Archer(string name) : Player(name), IArcher
+public class Archer(string name) : Player(name)
 {
     // Archer (Łucznik) - specjalizuje się w zdobywaniu dużej ilości punktów przez walkę na dystans
 
@@ -38,7 +30,7 @@ public class Archer(string name) : Player(name), IArcher
     }
 }
 
-public class Mage(string name) : Player(name), IMage
+public class Mage(string name) : Player(name)
 {
     // Mage (Mag) - specjalizuje się w rzucaniu zaklęć, aby wpływać na grę
 
@@ -69,7 +61,7 @@ public class Mage(string name) : Player(name), IMage
         }
     }
 }
-public class Healer(string name) : Player(name), IHealer
+public class Healer(string name) : Player(name)
 {
     // Healer (Lekarz) - specjalizuje się w leczeniu innych graczy
 

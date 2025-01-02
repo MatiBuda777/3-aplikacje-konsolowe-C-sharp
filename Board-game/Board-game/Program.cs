@@ -30,25 +30,13 @@ internal class Program
         
         if (players.All(player => player.Name != randomName))
         {
-            string newPlayer;
-            switch (randomIndex)
+            Player newPlayer = randomIndex switch
             {
-                case 1:
-                    newPlayer = new Warrior(randomName);
-                    break;
-                case 2:
-                    newPlayer = new Archer(randomName);
-                    break;
-                case 3:
-                    newPlayer = new Mage(randomName);
-                    break;
-                case 4:
-                    newPlayer = new Healer(randomName);
-                    break;
-                default:
-                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
-                    return;
-            }
+                1 => new Archer(randomName),
+                2 => new Mage(randomName),
+                3 => new Healer(randomName),
+                _ => new Warrior(randomName),
+            };
             players.Add(newPlayer);
             Console.WriteLine($"Dodano gracza {newPlayer.Name}");
         }
@@ -70,29 +58,18 @@ internal class Program
                           "\n3 - Mag" +
                           "\n4 - Lekarz");
         int choice = Convert.ToInt32(Console.ReadLine());
-        Player player1;
         
-        switch (choice)
+        Player player1 = choice switch
         {
-            case 1:
-                player1 = new Warrior(name);
-                break;
-            case 2:
-                player1 = new Archer(name);
-                break;
-            case 3:
-                player1 = new Mage(name);
-                break;
-            case 4:
-                player1 = new Healer(name);
-                break;
-            default:
-                Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
-                return;
-        }
+            2 => new Archer(name),
+            3 => new Mage(name),
+            4 => new Healer(name),
+            _ => new Warrior(name),
+        };
+        player1.Info();
         
-        List<Player> players = new() {  }; // lista z graczami
-        List<Player> playersFinished = new List<Player>(); // lista z graczami, którzy ukończyli grę w jakiś sposób (brak życia lub pole 64)
+        List<Player> players = new(); // lista z graczami
+        List<Player> playersFinished = new(); // lista z graczami, którzy ukończyli grę w jakiś sposób (brak życia lub pole 64)
         
         
         // dodawanie graczy do listy
@@ -151,7 +128,7 @@ internal class Program
                     var matchingPlayer = players.Find(player2 =>
                         player.Position == player2.Position && player.Name != player2.Name);
                     if (matchingPlayer != null)
-                        player.(matchingPlayer);
+                        player.Fight(matchingPlayer);
                 }
                 //var matchingPlayer = players.Find(player2 => player.Position == player2.Position && player.Name != player2.Name);
                 //if (matchingPlayer != null && matchingPlayer.GetType() == typeof(Warrior)) player.Attack(matchingPlayer);
