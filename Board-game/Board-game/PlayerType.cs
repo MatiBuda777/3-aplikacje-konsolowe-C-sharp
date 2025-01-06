@@ -13,6 +13,14 @@ public class Warrior(string name) : Player(name)
         Console.WriteLine($"{attacked.Name} traci {this.Strength} PŻ i zostaje mu {attacked.Health} PŻ.");
         Program.Line('!');
     }
+
+    public override void Info()
+    {
+        Program.Line('=');
+        Console.Write("Wojownik ");
+        base.Info();
+        Program.Line('=');
+    }
 }
 
 public class Archer(string name) : Player(name)
@@ -27,6 +35,14 @@ public class Archer(string name) : Player(name)
         Console.WriteLine($"{this.Name} atakuje {attacked.Name}!");
         Console.WriteLine($"{attacked.Name} traci {this.Strength} PŻ i zostaje mu {attacked.Health} PŻ.");
         Program.Line('!');
+    }
+    
+    public override void Info()
+    {
+        Program.Line('=');
+        Console.Write("Łucznik ");
+        base.Info();
+        Program.Line('=');
     }
 }
 
@@ -60,6 +76,14 @@ public class Mage(string name) : Player(name)
                 break;
         }
     }
+    
+    public override void Info()
+    {
+        Program.Line('=');
+        Console.Write("Mag ");
+        base.Info();
+        Program.Line('=');
+    }
 }
 public class Healer(string name) : Player(name)
 {
@@ -71,5 +95,13 @@ public class Healer(string name) : Player(name)
         int healPoints = random.Next(1, 16);
         Console.WriteLine($"{this.Name} ulecza siebie o {healPoints} punktów!");
         this.Health += healPoints;
+    }
+    
+    public override void Info()
+    {
+        Program.Line('=');
+        Console.Write("Lekarz ");
+        base.Info();
+        Program.Line('=');
     }
 }

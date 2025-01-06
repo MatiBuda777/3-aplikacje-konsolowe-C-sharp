@@ -130,8 +130,6 @@ internal class Program
                     if (matchingPlayer != null)
                         player.Fight(matchingPlayer);
                 }
-                //var matchingPlayer = players.Find(player2 => player.Position == player2.Position && player.Name != player2.Name);
-                //if (matchingPlayer != null && matchingPlayer.GetType() == typeof(Warrior)) player.Attack(matchingPlayer);
                 
                 Thread.Sleep(1500);
                 

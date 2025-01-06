@@ -16,14 +16,12 @@ public abstract class Player()
     public int Energy { get; set; } = 20;
 
     // info o graczu
-    public void Info()
+    public virtual void Info()
     {
-        Program.Line('=');
         Console.WriteLine($"{this.Name}, {this.Score} punktów. Obecnie na polu numer {this.Position}.");
         Console.WriteLine($"HP: {this.Health}");
         Console.WriteLine($"Siła: {this.Strength}");
         Console.WriteLine($"Energia: {this.Energy}");
-        Program.Line('=');
     }
 
     // ruch na planszy
