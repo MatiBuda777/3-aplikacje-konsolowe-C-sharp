@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj": {}
+    "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Sports-Team-Manager-System/Sports-Team-Manager-System.csproj": {}
   },
   "projects": {
-    "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj": {
+    "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Sports-Team-Manager-System/Sports-Team-Manager-System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj",
-        "projectName": "Board-game",
-        "projectPath": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/Board-game.csproj",
+        "projectUniqueName": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Sports-Team-Manager-System/Sports-Team-Manager-System.csproj",
+        "projectName": "Sports-Team-Manager-System",
+        "projectPath": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Sports-Team-Manager-System/Sports-Team-Manager-System.csproj",
         "packagesPath": "/home/matibuda/.nuget/packages/",
-        "outputPath": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Board-game/Board-game/obj/",
+        "outputPath": "/home/matibuda/RiderProjects/3-aplikacje-konsolowe-C-sharp/Sports-Team-Manager-System/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matibuda/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -32,16 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "all"
         }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -58,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/matibuda/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
