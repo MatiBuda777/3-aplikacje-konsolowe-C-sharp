@@ -4,20 +4,35 @@ public class Team
 {
     public List<Player> Players;
     
-    public void Add(Player player)
+    public void Add()
     {
-        if (Players.Contains(player)) return;
+        Console.Write("Imię i nazwisko: ");
+        string name = Console.ReadLine();
+        //Console.WriteLine();
+        Console.Write("Pozycja: ");
+        string position = Console.ReadLine();
+        Player player = new(name, position);
         
-        Players.Add(player);
-        Console.WriteLine($"Dodano gracza {player.Name}");
+        if (Players.Contains(player)) Console.WriteLine($"Gracz {player.Name} już istnieje");
+        else
+        {
+            Players.Add(player);
+            Console.WriteLine($"Dodano gracza {player.Name}");
+        }
+        
     }
 
-    public void Remove(Player player)
+    public void Remove()
     {
-        if (!Players.Contains(player)) return;
-        
-        Players.Remove(player); 
-        Console.WriteLine($"Usunięto gracza {player.Name}");
+        Console.Write("Podaj imię i nazwisko: ");
+        string name = Console.ReadLine();
+        var player = Players.FirstOrDefault(p => p.Name == name);
+        if (player == null) Console.WriteLine($"Gracz {player.Name} nie istnieje");
+        else
+        {
+            Players.Remove(player); 
+            Console.WriteLine($"Usunięto gracza {player.Name}");
+        }
     }
 
     public void Stats()
@@ -28,8 +43,34 @@ public class Team
 
     public static double AvgScore(List<Player> players)
     {
-        if (players.Count == 0) return 0;
+        if (players.Count !> 0) return 0;
         
         return players.Average(player => player.Score);
+    }
+    
+    public void Search(int goal)
+    {
+        Console.Write("Podaj imię i nazwisko gracza do wyszukania: ");
+        string name = Console.ReadLine();
+        var player = Players.FirstOrDefault(p => p.Name == name);
+        if (player != null)
+            switch (goal)
+            {
+                case 1:
+                    player.UpdateScore();
+                    break;
+                case 2:
+                    Console.Write("Podaj pozycję, według której wyszukasz zawodników: ");
+                    string position = Console.ReadLine();
+                    Player.SearchByPosition(Players, position).ToString();
+                    break;
+            }
+        else
+            Console.WriteLine($"Gracz {name} nie istnieje");
+    }
+
+    public void Filter()
+    {
+        
     }
 }
